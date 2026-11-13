@@ -1,0 +1,17 @@
+name = "realot-feedback"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Where the feedback server lives (not secret).
+FEEDBACK_API_BASE = "https://developer-feedback-hub--vealis-service.replit.app"
+# Where the Android (APK) build service lives (not secret).
+APK_API_BASE = "https://apk--build-server.replit.app"
+# Websites allowed to call this Worker from a browser, comma separated, for example
+# "https://realot-studio.pages.dev". Leave empty while testing.
+ALLOWED_ORIGINS = ""
+
+# The API keys are NOT stored in this file. They live in .dev.vars (private, git-ignored) and
+# `npm run setup` uploads them to Cloudflare as encrypted secrets:
+#   FEEDBACK_API_KEY   bug reports + announcements
+#   APK_API_KEY        Android (APK) builds
