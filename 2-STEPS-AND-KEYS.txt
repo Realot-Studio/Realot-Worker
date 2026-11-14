@@ -1,0 +1,43 @@
+REALOT WORKER: SET UP IN THE BROWSER (no terminal needed)
+PRIVATE: this file contains your real keys. Keep it somewhere safe, never upload it anywhere public.
+
+=========================================================
+PART 1: create the Worker
+=========================================================
+1. Go to https://dash.cloudflare.com and sign in (free account is fine).
+2. Left menu: "Workers & Pages"  ->  "Create"  ->  "Create Worker" (or "Start with Hello World").
+3. Name it:  realot-feedback    then click "Deploy".
+4. Click "Edit code".
+5. In the code editor press Ctrl+A, then Delete (the sample code disappears).
+6. Open the file  1-WORKER-CODE.js  (Files app -> double click), press Ctrl+A, Ctrl+C.
+7. Click in the Cloudflare editor, press Ctrl+V, then click "Deploy" (top right).
+
+=========================================================
+PART 2: add the settings
+=========================================================
+8. Go back to the Worker page -> "Settings" -> "Variables and Secrets" -> "Add".
+   Add these FOUR, one at a time. Names must be typed exactly (capital letters matter).
+
+   Type: Text      Name: FEEDBACK_API_BASE
+                   Value: https://developer-feedback-hub--vealis-service.replit.app
+
+   Type: Text      Name: APK_API_BASE
+                   Value: https://apk--build-server.replit.app
+
+   Type: SECRET    Name: FEEDBACK_API_KEY
+                   Value: ef_live_33e9b611537234adcd36e7ba4fe544aebe4ac797983e827fc98a99084efc4ff6
+
+   Type: SECRET    Name: APK_API_KEY
+                   Value: zk_live_CgVMJ9dp1dBVDrAGL93yBMLVZlHZm0ty
+
+9. Click "Deploy" (or "Save and deploy") after adding them.
+
+=========================================================
+PART 3: check it works
+=========================================================
+10. On the Worker page, copy its address (it looks like
+    https://realot-feedback.SOMETHING.workers.dev ).
+11. Open that address with  /health  on the end. You should see:  {"ok":true}
+12. SEND ME THAT ADDRESS and I will give you the finished hub zip with it already filled in.
+
+If Cloudflare or GitHub is blocked on the school network, try again at home or on a phone hotspot.
